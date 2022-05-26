@@ -13,22 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('units', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('username')->unique();
-            $table->string('image');
-            $table->foreignId('unit_id');
-            $table->string('password');
-            $table->string('kode_pegawai')->unique();
-            $table->integer('role_admin');
-            $table->integer('is_active');
-            $table->rememberToken();
+            $table->string('inisial');
+            $table->integer('add_by');
             $table->timestamps();
         });
-         Schema::table('users', function (Blueprint $table) {
+        Schema::table('units', function (Blueprint $table) {
             $table->softDeletes();
         });
+        
+
     }
 
     /**
@@ -38,8 +34,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
-        Schema::table('users', function (Blueprint $table) {
+        Schema::dropIfExists('units');
+        Schema::table('units', function (Blueprint $table) {
             $table->dropSoftDeletes();
         });
     }

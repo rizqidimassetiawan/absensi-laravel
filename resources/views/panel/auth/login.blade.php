@@ -30,9 +30,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
     <link rel="stylesheet" id="css-main" href="{{ asset('assets/css/oneui.min.css') }}">
 
-    <!-- You can include a specific file from css/themes/ folder to alter the default color theme of the template. eg: -->
-    <!-- <link rel="stylesheet" id="css-theme" href="assets/css/themes/amethyst.min.css"> -->
-    <!-- END Stylesheets -->
   </head>
   <body>
     
@@ -103,12 +100,13 @@
                   <!-- For more info and examples you can check out https://github.com/jzaefferer/jquery-validation -->
                   <div class="row g-0 justify-content-center">
                     <div class="col-sm-8 col-xl-4">
-                      <form class="js-validation-signin" action="be_pages_auth_all.html" method="POST">
+                      <form class="js-validation-signin" action="/authentication" method="POST">
+                        @csrf
                         <div class="mb-4">
-                          <input type="text" class="form-control form-control-lg form-control-alt py-3" id="login-username" name="login-username" placeholder="Username">
+                          <input type="text" class="form-control form-control-lg form-control-alt py-3"  id="login-username" name="username" placeholder="Username">
                         </div>
                         <div class="mb-4">
-                          <input type="password" class="form-control form-control-lg form-control-alt py-3" id="login-password" name="login-password" placeholder="Password">
+                          <input type="password" class="form-control form-control-lg form-control-alt py-3" id="login-password" name="password" placeholder="Password">
                         </div>
                         <div class="d-flex justify-content-between align-items-center mb-4">
                           <div>
