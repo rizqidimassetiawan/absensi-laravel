@@ -24,7 +24,7 @@ class UserFactory extends Factory
             'unit_id' => mt_rand(1,25),
             'password' => bcrypt('password'),
             'kode_pegawai' => $this->faker->randomNumber(5, true),
-            'role_admin' => $this->faker->numberBetween(1, 3),
+            'role_admin' => $this->faker->numberBetween(1, 2),
             'is_active' => $this->faker->numberBetween(0, 1),
             'remember_token' => Str::random(10),
         ];
